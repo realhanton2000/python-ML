@@ -5,10 +5,15 @@ import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+import os
 
 def predictX(index):
 
-    mat_contents = sio.loadmat('D:\\dev\\python-ML\\logistic-regression\\ex3data1.mat')
+    script_dir = os.path.dirname(__file__)
+    rel_path = 'ex3data1.mat'
+    abs_path = os.path.join(script_dir, rel_path)
+
+    mat_contents = sio.loadmat(abs_path)
     X = mat_contents['X']
     y = mat_contents['y']
     X = abs(X)
@@ -71,5 +76,5 @@ def predictX(index):
     #plt.imshow(arr, cmap='gray', vmin=0, vmax=1)
     #plt.show()
 
-#print(predictX(2333))
+print(predictX(2333))
 

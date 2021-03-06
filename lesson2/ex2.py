@@ -4,8 +4,10 @@ import pylab as pl
 import numpy as np
 from sklearn import linear_model
 from sklearn.metrics import r2_score
+import os
 
-df = pd.read_csv("d:/dev/python-ML/lesson2/FuelConsumptionCo2.csv")
+script_dir = os.path.dirname(__file__)
+df = pd.read_csv(os.path.join(script_dir, 'FuelConsumptionCo2.csv'))
 
 # take a look at the dataset
 df.head()
